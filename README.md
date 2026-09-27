@@ -59,9 +59,9 @@ The following SaaS platforms provide embedded accounting, automated GL operation
 
 Self-hosted engines, double-entry accounting libraries, plain-text accounting tools, and AI accounting agents for developer-led teams.
 
-*Sorted by GitHub Star Count (Descending)* ⬇️
+*Sorted by GitHub Stars_Count (Descending)* ⬇️
 
-| Project 🛠️ | GitHub Star Count ⭐ | Description & Key Capabilities ⚡ | License 📜 |
+| Project 🛠️ | GitHub Stars_Count ⭐ | Description & Key Capabilities ⚡ | License 📜 |
 | :--- | :--- | :--- | :--- |
 | **[Firefly III](https://github.com/firefly-iii/firefly-iii)** | [<img src="https://img.shields.io/github/stars/firefly-iii/firefly-iii?style=social&color=white" alt="Firefly III Stars"/>](https://github.com/firefly-iii/firefly-iii/stargazers) | Self-hosted personal and small-business financial manager with full double-entry support, recurring transactions, and API integrations. | AGPL-3.0 |
 | **[TaxHacker](https://github.com/vas3k/TaxHacker)** | [<img src="https://img.shields.io/github/stars/vas3k/TaxHacker?style=social&color=white" alt="TaxHacker Stars"/>](https://github.com/vas3k/TaxHacker/stargazers) | Self-hosted AI accounting app with LLM document extraction for receipts and invoices. Supports local OpenAI-compatible endpoints. | MIT |
