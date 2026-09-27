@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#311042"/>
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+    </pattern>
+
+    <!-- Glow Effects -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="subtleGlow">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .title {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-weight: 800;
+      font-size: 44px;
+      fill: #ffffff;
+    }
+    .subtitle {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-weight: 400;
+      font-size: 19px;
+      fill: #a5b4fc;
+    }
+    .badge-text {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      fill: #38bdf8;
+    }
+
+    /* CSS Animations for Dynamic Aspects */
+    @keyframes pulseLine {
+      0% { stroke-dashoffset: 1000; opacity: 0.3; }
+      50% { opacity: 0.9; }
+      100% { stroke-dashoffset: 0; opacity: 0.3; }
+    }
+
+    @keyframes floatParticle {
+      0% { transform: translateY(0px) scale(1); opacity: 0.4; }
+      50% { transform: translateY(-15px) scale(1.2); opacity: 0.8; }
+      100% { transform: translateY(0px) scale(1); opacity: 0.4; }
+    }
+
+    @keyframes chartGrow {
+      0% { transform: scaleY(0.2); }
+      50% { transform: scaleY(1.05); }
+      100% { transform: scaleY(1); }
+    }
+
+    .anim-wave {
+      stroke-dasharray: 8 8;
+      animation: pulseLine 25s linear infinite;
+    }
+
+    .p1 { animation: floatParticle 4s ease-in-out infinite; }
+    .p2 { animation: floatParticle 6s ease-in-out infinite 1s; }
+    .p3 { animation: floatParticle 5s ease-in-out infinite 2s; }
+  </style>
+
+  <!-- Background Layer -->
+  <rect width="1200" height="350" fill="url(#bgGradient)" rx="16"/>
+  <rect width="1200" height="350" fill="url(#grid)" rx="16"/>
+
+  <!-- Dynamic / Background Graphic Elements (Placed behind text) -->
+  <g opacity="0.25">
+    <!-- Financial Wave Lines -->
+    <path d="M -50 280 Q 200 150 450 260 T 950 180 T 1250 240" fill="none" stroke="#6366f1" stroke-width="3" class="anim-wave"/>
+    <path d="M -50 220 Q 250 320 550 190 T 1050 280 T 1250 160" fill="none" stroke="#a855f7" stroke-width="2" class="anim-wave"/>
+
+    <!-- Subtle Abstract Chart Bars on Right Side (Background) -->
+    <rect x="900" y="140" width="18" height="150" rx="4" fill="#818cf8" opacity="0.3"/>
+    <rect x="930" y="100" width="18" height="190" rx="4" fill="#a855f7" opacity="0.4"/>
+    <rect x="960" y="70" width="18" height="220" rx="4" fill="#ec4899" opacity="0.5"/>
+    <rect x="990" y="120" width="18" height="170" rx="4" fill="#38bdf8" opacity="0.4"/>
+    <rect x="1020" y="50" width="18" height="240" rx="4" fill="#4ade80" opacity="0.6" filter="url(#subtleGlow)"/>
+  </g>
+
+  <!-- Dynamic Particles (Background Floating) -->
+  <circle cx="150" cy="80" r="4" fill="#38bdf8" class="p1" filter="url(#subtleGlow)"/>
+  <circle cx="750" cy="60" r="6" fill="#a855f7" class="p2" filter="url(#subtleGlow)"/>
+  <circle cx="1100" cy="280" r="5" fill="#f43f5e" class="p3" filter="url(#subtleGlow)"/>
+
+  <!-- Main Decorative Tag Pill (Foreground Above Title) -->
+  <g transform="translate(80, 55)">
+    <rect width="250" height="32" rx="16" fill="rgba(99, 102, 241, 0.2)" stroke="rgba(129, 140, 248, 0.4)" stroke-width="1"/>
+    <circle cx="18" cy="16" r="5" fill="#4ade80" filter="url(#subtleGlow)"/>
+    <text x="32" y="21" class="badge-text">AI-NATIVE &amp; EMBEDDED FINANCE</text>
+  </g>
+
+  <!-- Foreground Title and Subtitle (Guaranteed readable and unobstructed) -->
+  <text x="80" y="140" class="title" filter="url(#glow)">
+    Awesome Embedded Accounting Platform
+  </text>
+  
+  <text x="80" y="185" class="subtitle">
+    Curated SaaS &amp; Open-Source AI Ledgers, Continuous Close &amp; Automated Bookkeeping
+  </text>
+
+  <!-- Subtitle Feature Pills / Highlights -->
+  <g transform="translate(80, 230)">
+    <!-- Pill 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="170" height="36" rx="8" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
+      <text x="16" y="23" font-family="system-ui" font-size="14" fill="#e2e8f0" font-weight="500">⚡ Continuous Close</text>
+    </g>
+
+    <!-- Pill 2 -->
+    <g transform="translate(185, 0)">
+      <rect width="170" height="36" rx="8" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
+      <text x="16" y="23" font-family="system-ui" font-size="14" fill="#e2e8f0" font-weight="500">🤖 AI ERPs &amp; Agents</text>
+    </g>
+
+    <!-- Pill 3 -->
+    <g transform="translate(370, 0)">
+      <rect width="185" height="36" rx="8" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
+      <text x="16" y="23" font-family="system-ui" font-size="14" fill="#e2e8f0" font-weight="500">📂 Open-Source Ledgers</text>
+    </g>
+  </g>
+</svg>
